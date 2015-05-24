@@ -1,8 +1,10 @@
-__version__ = '0.0.1'
-
+import os
+import functools
 import asyncio
 
-from aiomanhole import ThreadedInteractiveInterpreter, InteractiveInterpreter, InterpreterFactory
+from aiomanhole import (
+    ThreadedInteractiveInterpreter, InteractiveInterpreter,
+    InterpreterFactory)
 
 
 @asyncio.coroutine
@@ -17,17 +19,18 @@ def server(name, protocol, address, port):
     loop = asyncio.get_event_loop()
 
     host = address
-    
+
     if (port, path) == (None, None):
         raise ValueError('At least one of port or path must be given')
 
     if threaded:
         interpreter_class = functools.partial(
-            ThreadedInteractiveInterpreter, command_timeout=command_timeout)
+            ThreadedInteractiveInterpreter)
     else:
         interpreter_class = InteractiveInterpreter
 
-    client_cb = InterpreterFactory(interpreter_class,
+    client_cb = InterpreterFactory(
+        interpreter_class,
         shared=shared, namespace=namespace, banner=banner,
         loop=loop or asyncio.get_event_loop())
 
