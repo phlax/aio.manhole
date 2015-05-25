@@ -8,7 +8,7 @@ from aiomanhole import (
 
 
 @asyncio.coroutine
-def server(name, protocol, address, port):
+def factory(name, protocol, address, port):
     path = None
     threaded = False
     shared = False
@@ -50,6 +50,6 @@ def server(name, protocol, address, port):
                 atexit.register(remove_manhole)
 
     if port:
-        asyncio.async(
+        return asyncio.async(
             asyncio.start_server(
                 client_cb, host=host, port=port))
