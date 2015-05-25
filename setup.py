@@ -10,7 +10,8 @@ version = "0.0.1"
 
 install_requires = [
     'distribute',
-    'aiomanhole']
+    'aiomanhole',
+    'aio.app']
 
 if sys.version_info < (3, 4):
     install_requires += ['asyncio']
