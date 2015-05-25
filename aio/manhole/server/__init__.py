@@ -2,12 +2,14 @@ import os
 import functools
 import asyncio
 
+import aio.app
+
 from aiomanhole import (
     ThreadedInteractiveInterpreter, InteractiveInterpreter,
     InterpreterFactory)
 
 
-@asyncio.coroutine
+@aio.app.server.factory
 def factory(name, protocol, address, port):
     path = None
     threaded = False
