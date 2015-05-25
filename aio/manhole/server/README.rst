@@ -12,7 +12,7 @@ Lets create a manhole configuration
 ... log_level = ERROR
 ... 
 ... [server/server_name]
-... factory = aio.manhole.factory
+... factory = aio.manhole.server.factory
 ... port = 7373
 ... 
 ... """  

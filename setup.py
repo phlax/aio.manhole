@@ -1,5 +1,5 @@
 """
-aio.manhole
+aio.manhole.server
 """
 import sys
 from setuptools import setup, find_packages
@@ -17,7 +17,7 @@ if sys.version_info < (3, 4):
 tests_require = install_requires + ['aio.testing', "telnetlib3"]
 
 setup(
-    name='aio.manhole',
+    name='aio.manhole.server',
     version=version,
     description="Aio core utils",
     classifiers=[
@@ -27,7 +27,7 @@ setup(
     keywords='',
     author='Ryan Northey',
     author_email='ryan@3ca.org.uk',
-    url='http://github.com/phlax/aio.manhole',
+    url='http://github.com/phlax/aio.manhole.server',
     license='GPL',
     packages=find_packages(),
     namespace_packages=['aio'],
