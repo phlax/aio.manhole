@@ -7,6 +7,6 @@ install:
  - python setup.py install
 
 before_script:
-- wget https://raw.githubusercontent.com/phlax/aio.manhole.server/master/travis/aio.conf
+ - wget https://raw.githubusercontent.com/phlax/aio.manhole.server/master/travis/aio.conf
 
 script: aio test aio.manhole.server
