@@ -17,10 +17,6 @@ Lets create a manhole configuration
 ... 
 ... """  
 
->>> import sys
->>> import io
->>> import aiomanhole
-
 >>> import aio.testing
 >>> import aio.app
 >>> from aio.app.runner import runner
