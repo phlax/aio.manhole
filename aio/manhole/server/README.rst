@@ -25,7 +25,7 @@ When we run the manhole server, its accessible as "server_name" from aio.app.ser
 
 >>> @aio.testing.run_forever(sleep=1)
 ... def run_manhole_server(config):
-...     yield from runner(['run'], config_string=config)
+...     runner(['run'], config_string=config)
 ... 
 ...     def call_manhole():
 ...         print(aio.app.servers["server_name"])
@@ -43,7 +43,7 @@ Lets try calling the manhole server
 
 >>> @aio.testing.run_forever(sleep=1)
 ... def run_manhole_server(config):
-...     yield from runner(['run'], config_string=config)
+...     runner(['run'], config_string=config)
 ...     
 ...     class TestTelnetClient(telnetlib3.TelnetClient):
 ... 
